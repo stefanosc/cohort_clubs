@@ -1,0 +1,28 @@
+I  - create N empty groups
+II - for each user
+      for each group
+        for each group member
+        total_connections += user C (count) connections with group member (tracks history)
+      user GC (groups connection count) = total_connections for each group member
+    push user to group with min user GC
+    if more than 1 group has same min GC then push user to largest groups
+
+
+CLASSES
+- Cohort
+  - attrs
+    name
+    clubs
+    users
+
+- Club
+  - attrs
+    name
+    week
+    users
+
+- User
+  - attrs
+    name
+
+
