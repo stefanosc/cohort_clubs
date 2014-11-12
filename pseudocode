@@ -12,17 +12,23 @@ CLASSES
 - Cohort
   - attrs
     name
-    clubs
-    users
 
 - Club
   - attrs
     name
     week
-    users
+    belongs_to cohort
 
 - User
   - attrs
     name
+    belongs_to club
+    belongs_to cohort
+    has_many connections
+    has_many connected_users through connections, source: users
+    has_many inverse_connections class_name: connections, foreign_key: :connected_user_id
+    has_many inverse_connected_users through inverse_connections, source: :user
 
-
+- Connections
+    belongs to user
+    belongs to connected_user, class_name: :User
