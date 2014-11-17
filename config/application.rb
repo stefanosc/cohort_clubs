@@ -2,7 +2,7 @@ require 'pathname'
 require 'sqlite3'
 require 'active_record'
 require 'logger'
-
+require "faker"
 
 APP_ROOT = Pathname.new(File.expand_path(File.join(File.dirname(__FILE__), '..')))
 
